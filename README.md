@@ -10,3 +10,4 @@ book_mobile（UX图书管理系统移动版）
 
 ###2、调试
 - phonegap支持weinre调试并提供了一个在线工具：<http://debug.phonegap.com/>，尽情调试吧，少年！
+- 调试地址：<http://debug.phonegap.com/client/#book_mobile>
