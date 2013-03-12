@@ -1,0 +1,31 @@
+﻿<html>
+<head>
+	<meta charset="UTF-8">  
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Library</title>
+	<meta http-equiv="Expires content=0">
+	<meta http-equiv="Cache-Control content=no-cache">
+	<meta http-equiv="Pragma content=no-cache">
+	<link href="css/jquery.mobile_1.3.0.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/pagestyle.css">
+    <script src="lib/jquery_1.9.1.min.js"></script>
+    <script src="lib/jquery.mobile_1.3.0.min.js"></script>
+    <script src="lib/jquery.html5storage.min.js"></script>
+</head>
+<body>
+	<div data-role="page">
+		<div data-role="header"><h1>UX图书管理系统</h1></div>
+		<div data-role="content">
+			<input type="button" id="ClickToScan" value="扫描图书信息"><br>
+			<a href="storage.html">页面间传递信息</a><br>
+			<h2 id="title">Hello World!</h2>
+			<div id="isbn"></div>
+			<div id="author"></div>
+			<div id="picture"></div>
+			<div id="summary"></div>
+		</div>
+		<div data-role="footer"></div>
+		<script src="js/pageaction.js"></script>
+	</div>
+</body>
+</html>

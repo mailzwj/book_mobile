@@ -1,0 +1,44 @@
+﻿<html>
+<head>
+	<meta charset="UTF-8">  
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Library</title>
+	<meta http-equiv="Expires content=0">
+	<meta http-equiv="Cache-Control content=no-cache">
+	<meta http-equiv="Pragma content=no-cache">
+	<link href="css/jquery.mobile_1.3.0.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/pagestyle.css">
+	<script src="lib/jquery_1.9.1.min.js"></script>
+	<script src="lib/jquery.mobile_1.3.0.min.js"></script>
+	<script src="lib/jquery.html5storage.min.js"></script>
+</head>
+<body>
+	<div data-role="page" class="library">
+		<div data-role="header" data-position="fixed" data-fullscreen="true"><h1 class="app-head">UX图书管理系统</h1></div>
+		<div data-role="content" class="withmargin" id="App_main">
+			<form action="">
+				<div class="control-group">
+					<label for="" class="control-label">账户</label>
+					<div class="controls">
+						<input type="text" name="username" id="App-user" placeholder="域账户">
+					</div>
+				</div>
+				<div class="control-group">
+					<label for="" class="control-label">密码</label>
+					<div class="controls">
+						<input type="password" name="userpass" id="App-pass" placeholder="密码">
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<input type="submit" id="App-submit" value="登 录">
+						<input type="reset" id="App-reset" value="清 除">
+					</div>
+				</div>
+			</form>
+		</div>
+		<div data-role="footer" data-position="fixed" data-fullscreen="true"><p class="app-foot">@UX</p></div>
+		<script src="js/library.js"></script>
+	</div>
+</body>
+</html>
