@@ -8,4 +8,4 @@ mobilelib（UX图书管理系统移动版）
 - 如果报错，确保src文件夹下的super.loadUrl()地址正确
 
 ###2、调试
-- phonegap支持weinre调试并提供了一个在线工具：http://debug.phonegap.com/，尽情调试吧，少年！
+- phonegap支持weinre调试并提供了一个在线工具：<http://debug.phonegap.com/>，尽情调试吧，少年！
