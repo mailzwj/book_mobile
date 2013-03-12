@@ -1,7 +1,6 @@
 .settings
 libs
 res
-src
 AndroidManifest.xml
 ic_launcher-web.png
 proguard-project.txt
