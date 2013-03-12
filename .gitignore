@@ -1,10 +1,4 @@
 .settings
-libs
-res
-AndroidManifest.xml
-ic_launcher-web.png
-proguard-project.txt
-project.properties
 
 # built application files
 *.apk
