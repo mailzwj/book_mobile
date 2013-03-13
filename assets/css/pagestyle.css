@@ -3,3 +3,16 @@
 	margin-bottom: 55px;
 	padding: 10px;
 }
+
+#App-manage {
+    display: none;
+}
+
+#App-manage .ui-controlgroup-controls {
+    display: block;
+}
+
+#App-manage .ui-btn.ui-first-child,
+#App-manage .ui-btn.ui-last-child {
+    width: 49.6%;
+}

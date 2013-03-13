@@ -12,6 +12,9 @@
     <script src="lib/jquery_1.9.1.min.js"></script>
     <script src="lib/jquery.mobile_1.3.0.min.js"></script>
     <script src="lib/jquery.html5storage.min.js"></script>
+    <script src="lib/cordova-2.5.0.js"></script>
+    <script src="js/barcodescanner.js"></script>
+    <script src="http://debug.phonegap.com/target/target-script-min.js#book_mobile"></script>
 </head>
 <body>
 	<div data-role="page" class="library">
@@ -22,11 +25,17 @@
 					<div class="control-group">
 						<div class="controls">
 							<input type="text" id="App-kw" name="keyword" placeholder="请输入搜索关键词">
-							<input type="submit" id="App-search" value="搜 索">
-							<input type="button" id="App-borrow" value="扫描ISBN借书">
+							<div class="btns" data-role="controlgroup" data-type="horizontal">
+								<input type="submit" id="App-search" value="搜 索">
+								<input type="button" id="App-borrow" value="扫描ISBN借书">
+							</div>
 						</div>
 					</div>
 				</form>
+			</div>
+			<div class="manager" id="App-manage" data-role="controlgroup" data-type="horizontal">
+			    <input type="button" id="App-return" value="扫描还书">
+			    <input type="button" id="App-add" value="添加书籍">
 			</div>
 			<div class="resultlist">
 				<p class="search-title">搜索结果列表：</p>
@@ -47,9 +56,26 @@
 					</div>
 				</li>
 			</script>
+			<script src="js/booklist.js"></script>
 		</div>
 		<div data-role="footer" data-position="fixed" data-fullscreen="true"><p class="app-foot">@UX</p></div>
-		<script src="js/booklist.js"></script>
 	</div>
+	<div data-role="page" class="library" id="AppAddBook">
+        <div data-role="header" data-position="fixed" data-fullscreen="true"><h1 class="app-head">UX图书管理系统</h1></div>
+        <div data-role="content" class="withmargin">
+            <form class="form-horizontal App-addform">
+                <label for="App-isbn">ISBN:</label>
+                <input type="text" name="isbn" id="App-isbn" placeholder="请输入isbn编码" readonly="readonly">
+                <label for="App-cate">分类:</label>
+                <input type="text" name="bookcate" id="App-cate" placeholder="请输入图书分类编码">
+                <label for="App-number">数量:</label>
+                <input type="text" name="number" id="App-number" placeholder="请输入图书总册数">
+                
+                <input type="button" id="App-addbook" value="保 存">
+            </form>
+        </div>
+        <div data-role="footer" data-position="fixed" data-fullscreen="true"><p class="app-foot">@UX</p></div>
+        <!-- script src="js/addbook.js"></script -->
+    </div>
 </body>
 </html>
