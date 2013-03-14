@@ -1,5 +1,5 @@
 ﻿$(document).bind("pageinit", function(){
-	$.sessionStorage.setItem("host", "http://10.13.124.223:8080/book");
+	$.sessionStorage.setItem("host", "http://10.13.124.224:8080/book");
 	$("#App-submit").click(function(e){
 		var un = $("#App-user").val();
 		var up = $("#App-pass").val();
