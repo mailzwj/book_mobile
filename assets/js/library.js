@@ -1,5 +1,5 @@
 ﻿$(document).bind("pageinit", function(){
-	$.sessionStorage.setItem("host", "http://10.13.124.203:8080/book");
+	$.sessionStorage.setItem("host", "http://10.13.124.198:8080/book");
 	
 	$("#App-submit").click(function(e){
 		var host = $.sessionStorage.getItem("host");

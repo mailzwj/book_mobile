@@ -77,5 +77,20 @@
         <div data-role="footer" data-position="fixed" data-fullscreen="true"><p class="app-foot">@UX</p></div>
         <!-- script src="js/addbook.js"></script -->
     </div>
+    <div data-role="page" class="library" id="AppReturnBook">
+        <div data-role="header" data-position="fixed" data-fullscreen="true"><h1 class="app-head">UX图书管理系统</h1></div>
+        <div data-role="content" class="withmargin">
+            <form class="form-horizontal App-returnform" id="App-returnForm">
+                <label for="App-risbn">ISBN:</label>
+                <input type="text" name="risbn" id="App-risbn" placeholder="请输入isbn编码" readonly="readonly">
+                <label for="App-rname">读者:</label>
+                <input type="text" name="rname" id="App-rname" placeholder="请输还书者昵称">
+                
+                <input type="button" id="App-returnbook" value="确认还书">
+            </form>
+        </div>
+        <div data-role="footer" data-position="fixed" data-fullscreen="true"><p class="app-foot">@UX</p></div>
+        <!-- script src="js/addbook.js"></script -->
+    </div>
 </body>
 </html>

@@ -74,14 +74,17 @@ book.prototype = {
         if(type.toUpperCase() !== "EAN_13"){
             text = "";
         }
-        $.getJSON(_this.host + "/mreturn?isbn=" + text + "&callback=?", function(data){
+        $.mobile.changePage($("#AppReturnBook"));
+        
+        $("#App-risbn").val(text);
+        /*$.getJSON(_this.host + "/mreturn?isbn=" + text + "&callback=?", function(data){
             //_this.onAjaxReturned("", data);
             if(data.isSuccess){
                 alert(data.book);
             }else{
                 alert(data.error);
             }
-        });
+        });*/
         //}
     },
 	onAjaxReturned: function(url, data){
@@ -170,6 +173,28 @@ $(document).bind("pageinit", function(){
                 alert(data.book);
             }else{
                 alert(data.error);
+            }
+            $.mobile.changePage($("#AppBookList"));
+        });
+        e.preventDefault();
+    });
+    
+    $("#App-returnbook").unbind("click");
+    $("#App-returnbook").click(function(e){
+        var isbn = $("#App-risbn").val();
+        var nick = $("#App-rname").val();
+        var rb = host + "/mreturn";
+        $.post(rb, $("#App-returnForm").serialize(), function(data){
+            var json = {};
+            if(typeof data === "string"){
+                json = JSON.parse(data);
+            }else{
+                json = data;
+            }
+            if(json.isSuccess){
+                alert(json.book);
+            }else{
+                alert(json.error);
             }
             $.mobile.changePage($("#AppBookList"));
         });
