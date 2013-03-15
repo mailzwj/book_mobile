@@ -4,6 +4,7 @@
     <string name="app_name">UX图书馆</string>
     <string name="actions">退出</string>
     <string name="reload">刷新</string>
+    <string name="restart">重启</string>
     <string name="hello_world">Hello world!</string>
 
 </resources>

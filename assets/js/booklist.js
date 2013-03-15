@@ -171,6 +171,7 @@ $(document).bind("pageinit", function(){
             }else{
                 alert(data.error);
             }
+            $.mobile.changePage($("#AppBookList"));
         });
         e.preventDefault();
     });
