@@ -180,6 +180,12 @@ $(document).bind("pageinit", function(){
 		
 		e.preventDefault();
 	});
+	
+	//退出功能
+	$(document).unbind("backbutton");
+	$(document).bind("backbutton", function(){
+	    navigator.app.exitApp();
+	});
 });
 //获取图书列表
 $("#AppBookList").bind("pageshow", function(event, ui){
