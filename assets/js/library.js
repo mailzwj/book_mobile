@@ -204,47 +204,53 @@ $("#AppBookList").bind("pageshow", function(event, ui){
     //扫描借书按钮点击事件
     $("#App-borrow").unbind("click");
     $("#App-borrow").click(function(e){
-        window.plugins.barcodeScanner.scan(function(result) {
-            if(result.cancelled){
-                alert("取消借书。");
-            }else{
-                //alert("扫描结果如下：\n" + "解码: " + result.text + "\n" + "编码类型: " + result.format);
-                //alert(result.format);
-                bs.scanSuccess(result.text, result.format);
-            }
-        }, function(error) {
-            alert("扫描失败: " + error);
-        });
+        try {
+           window.plugins.barcodeScanner.scan(function(result) {
+               if(result.cancelled){
+                   alert("取消借书。");
+               }else{
+                   //alert("扫描结果如下：\n" + "解码: " + result.text + "\n" + "编码类型: " + result.format);
+                   //alert(result.format);
+                   bs.scanSuccess(result.text, result.format);
+               }
+           });
+       } catch (ex) {
+            alert(ex.message);
+       }
         e.preventDefault();
     });
     //扫描还书按钮点击事件
     $("#App-return").unbind("click");
     $("#App-return").click(function(e){
-        window.plugins.barcodeScanner.scan(function(result) {
-            if(result.cancelled){
-                alert("取消还书。");
-            }else{
-                bs.returnSuccess(result.text, result.format);
-            }
-        }, function(error) {
-            alert("扫描失败: " + error);
-        });
+        try {
+            window.plugins.barcodeScanner.scan(function(result) {
+                if(result.cancelled){
+                    alert("取消还书。");
+                }else{
+                    bs.returnSuccess(result.text, result.format);
+                }
+            });
+        } catch (ex) {
+            alert(ex.message);
+        }
         e.preventDefault();
     });
     //通过扫描添加书籍点击事件
     $("#App-add").unbind("click");
     $("#App-add").click(function(e){
-        window.plugins.barcodeScanner.scan(function(result) {
-            if(result.cancelled){
-                alert("取消添加。");
-            }else{
-                //alert("扫描结果如下：\n" + "解码: " + result.text + "\n" + "编码类型: " + result.format);
-                //alert(result.format);
-                bs.goAddBook(result.text, result.format);
-            }
-        }, function(error) {
-            alert("扫描失败: " + error);
-        });
+        try {
+            window.plugins.barcodeScanner.scan(function(result) {
+                if(result.cancelled){
+                    alert("取消添加。");
+                }else{
+                    //alert("扫描结果如下：\n" + "解码: " + result.text + "\n" + "编码类型: " + result.format);
+                    //alert(result.format);
+                    bs.goAddBook(result.text, result.format);
+                }
+            });
+        } catch (ex) {
+            alert(ex.message);
+        }
         e.preventDefault();
     });
 });
@@ -252,6 +258,7 @@ $("#AppAddBook").bind("pageshow", function(event, ui){
     //保存书籍按钮点击事件
     $("#App-addbook").unbind("click");
     $("#App-addbook").click(function(e){
+        var host = $.sessionStorage.getItem('host');
         var isbn = $("#App-isbn").val();
         var cate = $("#App-cate").val();
         var numb = $("#App-number").val();
@@ -279,6 +286,7 @@ $("#AppReturnBook").bind("pageshow", function(event, ui){
     //确认还书按钮点击
     $("#App-returnbook").unbind("click");
     $("#App-returnbook").click(function(e){
+        var host = $.sessionStorage.getItem('host');
         var isbn = $("#App-risbn").val();
         var nick = $("#App-rname").val();
         var rb = host + "/mreturn";
