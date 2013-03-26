@@ -168,7 +168,7 @@ $(document).bind("pageinit", function(){
 		var login = host + "/login";
 		
 		$.post(login, $('#loginForm').serialize(), function(data) {
-		    alert(JSON.stringify(data));		
+		    //alert(JSON.stringify(data));		
 			if(data.isSuccess){
 				$.sessionStorage.setItem("userinfo", JSON.stringify(data.userinfo));
 				//window.location.href = "list.html";
