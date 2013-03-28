@@ -1,4 +1,17 @@
-﻿.library .withmargin {
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    display: block;
+    clear: both;
+    content: "";
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+
+.library .withmargin {
 	margin-top: 45px;
 	margin-bottom: 55px;
 	padding: 10px;
@@ -15,4 +28,89 @@
 #App-manage .ui-btn.ui-first-child,
 #App-manage .ui-btn.ui-last-child {
     width: 49.6%;
+}
+
+.control-group .control-label {
+    padding-left: 10px;
+}
+
+.ui-btn {
+    display: inline-block;
+}
+
+.book-list, .book-list .item {
+    margin: 0 0 10px;
+    padding: 0 0 10px;
+    list-style: none;
+}
+
+.book-list .item {
+    border-bottom: 1px solid #ccc;
+}
+
+.book-list .bookpic {
+    float: left;
+    margin-right: 10px;
+}
+
+.book-list .book-info .book-title {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.book-list .book-info .book-title a {
+    color: #333;
+    text-decoration: none;
+}
+
+.book-list .book-info .book-title span {
+    color: #777;
+}
+
+.bk-content .bookicon {
+    float: left;
+}
+
+.bk-content .row {
+    margin: 0;
+    padding: 0 0 0 85px;
+    line-height: 22px;
+}
+
+.bookinfo .recom {
+    padding-top: 10px;
+    text-indent: 2em;
+    line-height: 150%;
+}
+
+.his-main .item, .com-main .item {
+    margin: 0;
+    padding: 0;
+    line-height: 150%;
+}
+
+.detail-title {
+    margin: 0;
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+.his-title, .com-title {
+    margin: 0;
+    padding: 10px 0 5px;
+}
+
+.form-horizontal label.ui-input-text {
+    padding-left: 10px;
+}
+
+.listback {
+    position: absolute;
+    z-index: 9;
+    left: 5px;
+    top: 15px;
+}
+
+.app-foot {
+    text-align: center;
 }

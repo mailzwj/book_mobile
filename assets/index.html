@@ -42,21 +42,19 @@
 		<div data-role="footer" data-position="fixed" data-fullscreen="true"><p class="app-foot">@UX</p></div>
 	</div>
 	<!-- 图书列表 -->
-	<div data-role="page" class="library" id="AppBookList">
+	<div data-role="page" class="library" id="AppBookList" data-dom-cache="false">
         <div data-role="header" data-position="fixed" data-fullscreen="true"><h1 class="app-head">UX图书管理系统</h1></div>
         <div data-role="content" class="withmargin">
             <div class="search">
-                <form action="">
-                    <div class="control-group">
-                        <div class="controls">
-                            <input type="text" id="App-kw" name="keyword" placeholder="请输入搜索关键词">
-                            <div class="btns" data-role="controlgroup" data-type="horizontal">
-                                <input type="submit" id="App-search" value="搜 索">
-                                <input type="button" id="App-borrow" value="扫描ISBN借书">
-                            </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <input type="text" id="App-kw" name="keyword" placeholder="请输入搜索关键词">
+                        <div class="btns" data-role="controlgroup" data-type="horizontal">
+			                <input type="submit" id="App-search" value="搜 索">
+			                <input type="button" id="App-borrow" value="扫描ISBN借书">
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
             <div class="manager" id="App-manage" data-role="controlgroup" data-type="horizontal">
                 <input type="button" id="App-return" value="扫描还书">
@@ -69,14 +67,14 @@
                 </div>
             </div>
             <script type="text/template" id="App-template">
-                <li class="item">
-                    <a href="{{href}}" data-isbn="{{isbn}}"><img src="{{pic}}"></a>
+                <li class="item clearfix">
+                    <a href="{{href}}" class="bookpic" data-isbn="{{isbn}}"><img src="{{pic}}"></a>
                     <div class="book-info">
                         <p class="book-title">
                             <a href="{{href}}" data-isbn="{{isbn}}">{{bookname}}</a>
                         </p>
                         <p class="book-title">
-                            <span class="book-author">{{author}}</span>
+                            <span class="book-author">{{author}}&nbsp;编著</span>
                         </p>
                     </div>
                 </li>
@@ -118,20 +116,27 @@
     </div>
     <!-- 图书详情 -->
     <div data-role="page" class="library" id="AppBookDetail">
-        <div data-role="header" data-position="fixed" data-fullscreen="true"><h1 class="app-head">UX图书管理系统</h1></div>
+        <div data-role="header" data-position="fixed" data-fullscreen="true">
+            <h1 class="app-head">UX图书管理系统</h1>
+            <a href="#AppBookList" class="listback">返回</a>
+        </div>
         <div data-role="content" class="withmargin">
             <div class="resultlist" id="App-detail"></div>
             <script type="text/template" id="App-detailtemplate">
-                <p class="detail-title">《{{bookname}}》</p>
+                <h2 class="detail-title">《{{bookname}}》</h2>
                 <div class="bookinfo">
-                    href: {{href}}<br>
-                    pic: {{pic}}<br>
-                    book_name: {{bookname}}<br>
-                    author: {{author}}<br>
-                    publish_house: {{publish_house}}<br>
-                    publish_date: {{publish_date}}<br>
-                    recommend: {{recommend}}<br>
-                    book_number: {{book_number}}
+                    <div class="bk-content clearfix">
+	                    <img src="{{pic}}" class="bookicon">
+	                    <div class="bk-detail">
+		                    <p class="row">作者：{{author}}</p>
+		                    <p class="row">出版社：{{publish_house}}</p>
+		                    <p class="row">出版时间：{{publish_date}}</p>
+		                    <p class="row">可借册数：{{book_number}}册</p>
+		                </div>
+	                </div>
+	                <div class="recom">
+	                   {{recommend}}
+	                </div>
                 </div>
             </script>
             <div class="history" id="App-history">
